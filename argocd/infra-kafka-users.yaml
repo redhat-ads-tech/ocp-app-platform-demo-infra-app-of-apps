@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: kafka-users
-    repoURL: https://{{ gitlab_host }}/platform/infra-app-of-apps.git
+    repoURL: https://{{ gitlab_host }}/rhdh/infra-app-of-apps.git
     targetRevision: main
     directory:
       recurse: false
