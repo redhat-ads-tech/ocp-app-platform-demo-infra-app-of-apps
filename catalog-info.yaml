@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: infra-resources
+  description: Infrastructure resources managed via GitOps
+spec:
+  type: url
+  targets:
+    - ./catalog/kafka-topics/*.yaml
+    - ./catalog/kafka-users/*.yaml

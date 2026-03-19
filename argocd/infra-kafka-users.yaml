@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra-kafka-users
+  namespace: {{ gitops_namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: kafka
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kafka-users
+    repoURL: https://{{ gitlab_host }}/platform/infra-app-of-apps.git
+    targetRevision: main
+    directory:
+      recurse: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false
+      - RespectIgnoreDifferences=true
+      - SkipDryRunOnMissingResource=true
