@@ -1,0 +1,3 @@
+gitlabHost: ""
+gitopsNamespace: openshift-gitops
+kafkaNamespace: kafka
