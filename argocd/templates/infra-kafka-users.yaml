@@ -16,6 +16,7 @@ spec:
     targetRevision: main
     directory:
       recurse: false
+      include: "*.yaml"
   syncPolicy:
     automated:
       prune: true
